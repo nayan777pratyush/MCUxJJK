@@ -134,8 +134,7 @@ class FusionData {
     originStory:
         'Born in the convergence point of the Sacred Timeline and the Veil of Separation, The Infinite Sorcerer emerged when Doctor Strange\'s reality-bending Sling Ring intersected with Gojo Satoru\'s boundless Infinity technique. The fusion transcends both cursed energy and quantum sorcery, wielding supreme dominance over reality, space, and information simultaneously.',
     primaryColor: AppColors.cursedPurple,
-    imageUrl:
-        'https://lh3.googleusercontent.com/aida/AEtjO1Xkushy20qmgPP8D9sQoDLXjBxwZvPiOurazlKG3ogvJRjacKa2nPK0JHJCScRYXKSnhMv4U3rrhE9wW6Ah5Da49R7Dw3NVRNk6_Z7adfYN7oTTVMMTPR9umvv8YHRzzKpnCsyyvV2lsJtqUqMr9yUYOTbwCz3jhpLhCpK-szZSdzqJWjDIac5JpRAfqeN2SrY-W9svKit0Lkh9hArqcB7HFm6hyYEZ3xGuRyxx_JAUapMPsfi0JZzSSHmV',
+    imageUrl: null,
     abilities: [
       FusionAbility(
         name: 'INFINITE VOID',

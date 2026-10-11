@@ -286,9 +286,73 @@ class ResultScreen extends StatelessWidget {
 
   Widget _buildFallbackHero() {
     return Container(
-      color: const Color(0xFF0E0E12),
-      child: Center(
-        child: Icon(fusion.avatarIcon, size: 80, color: fusion.primaryColor),
+      width: double.infinity,
+      height: double.infinity,
+      decoration: BoxDecoration(
+        gradient: RadialGradient(
+          center: Alignment.center,
+          radius: 0.9,
+          colors: [
+            fusion.primaryColor.withOpacity(0.4),
+            const Color(0xFF140726),
+            const Color(0xFF08070D),
+          ],
+        ),
+      ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          // Outer pulsating ring
+          Container(
+            width: 170,
+            height: 170,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: fusion.primaryColor.withOpacity(0.4),
+                width: 2,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: fusion.primaryColor.withOpacity(0.3),
+                  blurRadius: 36,
+                  spreadRadius: 8,
+                ),
+              ],
+            ),
+          ),
+          // Inner glowing core
+          Container(
+            width: 110,
+            height: 110,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  fusion.primaryColor.withOpacity(0.5),
+                  AppColors.primary.withOpacity(0.2),
+                ],
+              ),
+              border: Border.all(
+                color: AppColors.primary.withOpacity(0.7),
+                width: 2,
+              ),
+            ),
+          ),
+          Icon(fusion.avatarIcon, size: 70, color: Colors.white),
+          Positioned(
+            top: 50,
+            left: 70,
+            child: Icon(Icons.auto_awesome, size: 22, color: AppColors.secondary),
+          ),
+          Positioned(
+            bottom: 50,
+            right: 70,
+            child: Icon(Icons.electric_bolt, size: 24, color: AppColors.primary),
+          ),
+        ],
       ),
     );
   }

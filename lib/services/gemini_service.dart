@@ -162,14 +162,8 @@ Provide the character details as a JSON object matching this schema:
     final String id =
         'fusion_${mcuCharacter.id}_${jjkCharacter.id}_${DateTime.now().millisecondsSinceEpoch}';
 
+    // No remote image URLs — avoids CORS issues on GitHub Pages
     String? imageUrl;
-    if ((mcuCharacter.name.contains('STRANGE') ||
-            mcuCharacter.id.contains('strange')) &&
-        (jjkCharacter.name.contains('GOJO') ||
-            jjkCharacter.id.contains('gojo'))) {
-      imageUrl =
-          'https://lh3.googleusercontent.com/aida/AEtjO1Xkushy20qmgPP8D9sQoDLXjBxwZvPiOurazlKG3ogvJRjacKa2nPK0JHJCScRYXKSnhMv4U3rrhE9wW6Ah5Da49R7Dw3NVRNk6_Z7adfYN7oTTVMMTPR9umvv8YHRzzKpnCsyyvV2lsJtqUqMr9yUYOTbwCz3jhpLhCpK-szZSdzqJWjDIac5JpRAfqeN2SrY-W9svKit0Lkh9hArqcB7HFm6hyYEZ3xGuRyxx_JAUapMPsfi0JZzSSHmV';
-    }
 
     return FusionCharacter(
       id: id,

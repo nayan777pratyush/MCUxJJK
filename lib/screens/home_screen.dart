@@ -93,7 +93,7 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'MCU Ã— JJK',
+                  'MCU × JJK',
                   style: AppStyles.headlineSm(color: AppColors.primary).copyWith(
                     fontWeight: FontWeight.w900,
                     letterSpacing: 1.5,
@@ -210,18 +210,25 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   height: 220,
                   width: double.infinity,
-                  color: const Color(0xFF0E0E12),
-                  child: Image.network(
-                    hero.imageUrl!,
-                    fit: BoxFit.cover,
-                    alignment: Alignment.topCenter,
-                    errorBuilder: (_, __, ___) => Container(
-                      color: const Color(0xFF131317),
-                      child: const Center(
-                        child: Icon(Icons.auto_awesome, color: AppColors.primary, size: 64),
-                      ),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        const Color(0xFF160826),
+                        const Color(0xFF0A0A12),
+                        hero.primaryColor.withOpacity(0.2),
+                      ],
                     ),
                   ),
+                  child: hero.imageUrl != null
+                      ? Image.network(
+                          hero.imageUrl!,
+                          fit: BoxFit.cover,
+                          alignment: Alignment.topCenter,
+                          errorBuilder: (_, __, ___) => _buildHeroIllustration(hero),
+                        )
+                      : _buildHeroIllustration(hero),
                 ),
                 // Gradient scrim overlay
                 Positioned.fill(
@@ -305,7 +312,7 @@ class HomeScreen extends StatelessWidget {
                       Text(hero.jjkParent, style: AppStyles.bodySm(color: AppColors.onSurfaceVariant)),
                       const Padding(
                         padding: EdgeInsets.symmetric(horizontal: 6),
-                        child: Text('âœ•', style: TextStyle(color: AppColors.primary, fontSize: 10)),
+                        child: Text('×', style: TextStyle(color: AppColors.primary, fontSize: 12, fontWeight: FontWeight.bold)),
                       ),
                       Text(hero.mcuParent, style: AppStyles.bodySm(color: AppColors.onSurfaceVariant)),
                     ],
@@ -366,6 +373,92 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+  Widget _buildHeroIllustration(FusionCharacter hero) {
+    return Container(
+      width: double.infinity,
+      height: 220,
+      decoration: BoxDecoration(
+        gradient: RadialGradient(
+          center: Alignment.center,
+          radius: 0.85,
+          colors: [
+            hero.primaryColor.withOpacity(0.35),
+            const Color(0xFF130924),
+            const Color(0xFF090810),
+          ],
+        ),
+      ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          // Background aura rings
+          Container(
+            width: 140,
+            height: 140,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: hero.primaryColor.withOpacity(0.3),
+                width: 2,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: hero.primaryColor.withOpacity(0.25),
+                  blurRadius: 30,
+                  spreadRadius: 8,
+                ),
+              ],
+            ),
+          ),
+          Container(
+            width: 100,
+            height: 100,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  hero.primaryColor.withOpacity(0.4),
+                  AppColors.primary.withOpacity(0.2),
+                ],
+              ),
+              border: Border.all(
+                color: AppColors.primary.withOpacity(0.6),
+                width: 1.5,
+              ),
+            ),
+          ),
+          // Central Iconic Fusion Glyph
+          Icon(
+            hero.avatarIcon,
+            size: 64,
+            color: Colors.white,
+          ),
+          // Occult Corner Sparkles
+          Positioned(
+            top: 45,
+            left: 60,
+            child: Icon(
+              Icons.auto_awesome,
+              size: 18,
+              color: AppColors.secondary.withOpacity(0.8),
+            ),
+          ),
+          Positioned(
+            bottom: 45,
+            right: 60,
+            child: Icon(
+              Icons.flare,
+              size: 20,
+              color: hero.primaryColor.withOpacity(0.9),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget _buildPill(IconData icon, String text, Color color) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
@@ -396,7 +489,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             Text('TRENDING COMBINATIONS', style: AppStyles.headlineSm(color: Colors.white)),
             const SizedBox(width: 6),
-            const Text('ðŸ”¥', style: TextStyle(fontSize: 14)),
+            const Icon(Icons.local_fire_department, color: Color(0xFFFF544A), size: 18),
           ],
         ),
         GestureDetector(
