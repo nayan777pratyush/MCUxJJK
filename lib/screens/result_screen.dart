@@ -414,7 +414,7 @@ class ResultScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                const Text('Ã—', style: TextStyle(color: AppColors.tertiaryContainer, fontWeight: FontWeight.bold)),
+                const Text('×', style: TextStyle(color: AppColors.tertiaryContainer, fontWeight: FontWeight.bold, fontSize: 16)),
                 Row(
                   children: [
                     Text(

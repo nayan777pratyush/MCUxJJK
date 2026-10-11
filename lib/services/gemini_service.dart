@@ -159,11 +159,43 @@ Provide the character details as a JSON object matching this schema:
       primaryColor = AppColors.cursedPurple;
     }
 
-    final String id =
-        'fusion_${mcuCharacter.id}_${jjkCharacter.id}_${DateTime.now().millisecondsSinceEpoch}';
-
-    // No remote image URLs — avoids CORS issues on GitHub Pages
+    // Automatically resolve corresponding high-res Stitch anime fusion artwork:
     String? imageUrl;
+    final mcuId = mcuCharacter.id.toLowerCase();
+    final jjkId = jjkCharacter.id.toLowerCase();
+
+    if ((mcuId.contains('strange') && jjkId.contains('gojo')) ||
+        (mcuId.contains('gojo') && jjkId.contains('strange'))) {
+      imageUrl = 'assets/images/infinite_sorcerer.jpg';
+    } else if (mcuId.contains('panther') || mcuId.contains('strange') && jjkId.contains('megumi')) {
+      imageUrl = 'assets/images/thunder_shadow.jpg';
+    } else if (mcuId.contains('spiderman') || jjkId.contains('yuji')) {
+      imageUrl = 'assets/images/cursed_web.jpg';
+    } else if (mcuId.contains('thor') || jjkId.contains('megumi')) {
+      imageUrl = 'assets/images/thunder_shadow.jpg';
+    } else if (jjkId.contains('sukuna')) {
+      imageUrl = 'assets/images/cursed_titan.jpg';
+    } else if (jjkId.contains('toji')) {
+      imageUrl = 'assets/images/heavenly_hunter.jpg';
+    } else if (jjkId.contains('nobara') || mcuId.contains('marvel')) {
+      imageUrl = 'assets/images/binary_resonance.jpg';
+    } else if (mcuId.contains('ironman')) {
+      imageUrl = 'assets/images/boogie_tech.jpg';
+    } else {
+      // Intelligently cycle among the 8 high-res anime artworks
+      final allImages = [
+        'assets/images/infinite_sorcerer.jpg',
+        'assets/images/cursed_titan.jpg',
+        'assets/images/cursed_web.jpg',
+        'assets/images/heavenly_hunter.jpg',
+        'assets/images/thunder_shadow.jpg',
+        'assets/images/crimson_chaos.jpg',
+        'assets/images/boogie_tech.jpg',
+        'assets/images/binary_resonance.jpg',
+      ];
+      final hash = (mcuCharacter.name.length * 7 + jjkCharacter.name.length * 13) % allImages.length;
+      imageUrl = allImages[hash];
+    }
 
     return FusionCharacter(
       id: id,
