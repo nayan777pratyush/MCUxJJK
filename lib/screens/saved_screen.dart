@@ -323,13 +323,21 @@ class _SavedScreenState extends State<SavedScreen> {
                 child: Stack(
                   children: [
                     if (item.imageUrl != null)
-                      Image.network(
-                        item.imageUrl!,
-                        width: double.infinity,
-                        height: double.infinity,
-                        fit: BoxFit.cover,
-                        errorBuilder: (_, __, ___) => _buildFallbackGridIcon(item),
-                      )
+                      (item.imageUrl!.startsWith('assets/')
+                          ? Image.asset(
+                              item.imageUrl!,
+                              width: double.infinity,
+                              height: double.infinity,
+                              fit: BoxFit.cover,
+                              errorBuilder: (_, __, ___) => _buildFallbackGridIcon(item),
+                            )
+                          : Image.network(
+                              item.imageUrl!,
+                              width: double.infinity,
+                              height: double.infinity,
+                              fit: BoxFit.cover,
+                              errorBuilder: (_, __, ___) => _buildFallbackGridIcon(item),
+                            ))
                     else
                       _buildFallbackGridIcon(item),
                     // Scrim

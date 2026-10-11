@@ -169,14 +169,23 @@ class ResultScreen extends StatelessWidget {
         child: Stack(
           children: [
             if (fusion.imageUrl != null)
-              Image.network(
-                fusion.imageUrl!,
-                width: double.infinity,
-                height: double.infinity,
-                fit: BoxFit.cover,
-                alignment: Alignment.topCenter,
-                errorBuilder: (_, __, ___) => _buildFallbackHero(),
-              )
+              (fusion.imageUrl!.startsWith('assets/')
+                  ? Image.asset(
+                      fusion.imageUrl!,
+                      width: double.infinity,
+                      height: double.infinity,
+                      fit: BoxFit.cover,
+                      alignment: Alignment.topCenter,
+                      errorBuilder: (_, __, ___) => _buildFallbackHero(),
+                    )
+                  : Image.network(
+                      fusion.imageUrl!,
+                      width: double.infinity,
+                      height: double.infinity,
+                      fit: BoxFit.cover,
+                      alignment: Alignment.topCenter,
+                      errorBuilder: (_, __, ___) => _buildFallbackHero(),
+                    ))
             else
               _buildFallbackHero(),
             // Gradient scrim

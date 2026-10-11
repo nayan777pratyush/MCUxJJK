@@ -222,12 +222,19 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   child: hero.imageUrl != null
-                      ? Image.network(
-                          hero.imageUrl!,
-                          fit: BoxFit.cover,
-                          alignment: Alignment.topCenter,
-                          errorBuilder: (_, __, ___) => _buildHeroIllustration(hero),
-                        )
+                      ? (hero.imageUrl!.startsWith('assets/')
+                          ? Image.asset(
+                              hero.imageUrl!,
+                              fit: BoxFit.cover,
+                              alignment: Alignment.topCenter,
+                              errorBuilder: (_, __, ___) => _buildHeroIllustration(hero),
+                            )
+                          : Image.network(
+                              hero.imageUrl!,
+                              fit: BoxFit.cover,
+                              alignment: Alignment.topCenter,
+                              errorBuilder: (_, __, ___) => _buildHeroIllustration(hero),
+                            ))
                       : _buildHeroIllustration(hero),
                 ),
                 // Gradient scrim overlay

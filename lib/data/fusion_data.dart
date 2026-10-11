@@ -134,7 +134,7 @@ class FusionData {
     originStory:
         'Born in the convergence point of the Sacred Timeline and the Veil of Separation, The Infinite Sorcerer emerged when Doctor Strange\'s reality-bending Sling Ring intersected with Gojo Satoru\'s boundless Infinity technique. The fusion transcends both cursed energy and quantum sorcery, wielding supreme dominance over reality, space, and information simultaneously.',
     primaryColor: AppColors.cursedPurple,
-    imageUrl: null,
+    imageUrl: 'assets/images/infinite_sorcerer.jpg',
     abilities: [
       FusionAbility(
         name: 'INFINITE VOID',
@@ -192,6 +192,7 @@ class FusionData {
       originStory: 'When the Mad Titan claimed the twenty fingers of Sukuna, the cosmos trembled under absolute malevolent supremacy.',
       primaryColor: AppColors.crimsonSlash,
       avatarIcon: Icons.coronavirus,
+      imageUrl: 'assets/images/cursed_titan.jpg',
       abilities: [
         FusionAbility(name: 'CLEAVE // DISMANTLE', description: 'Cosmic Slice', icon: Icons.content_cut, color: AppColors.crimsonSlash),
         FusionAbility(name: 'INFINITY STRIKE', description: 'Planetary Crush', icon: Icons.public, color: AppColors.tertiaryContainer),
@@ -212,6 +213,7 @@ class FusionData {
       originStory: 'Peter Parker engulfed in cursed energy awakens Divergent Web strikes across New York.',
       primaryColor: Color(0xFFFB923C),
       avatarIcon: Icons.grain,
+      imageUrl: 'assets/images/cursed_web.jpg',
       abilities: [
         FusionAbility(name: 'DIVERGENT WEB', description: 'Delayed Impact Web', icon: Icons.sports_mma, color: Color(0xFFFB923C)),
         FusionAbility(name: 'BLACK FLASH KICK', description: 'Spatial Distortion', icon: Icons.flash_on, color: AppColors.crimsonSlash),
@@ -232,6 +234,7 @@ class FusionData {
       originStory: 'The ultimate sorcerer killer fused with Weapon X, wielding Inverted Adamantium blades.',
       primaryColor: AppColors.secondary,
       avatarIcon: Icons.sports_kabaddi,
+      imageUrl: 'assets/images/heavenly_hunter.jpg',
       abilities: [
         FusionAbility(name: 'INVERTED SPEAR SLASH', description: 'Nullifies Magic/Curses', icon: Icons.colorize, color: AppColors.secondary),
         FusionAbility(name: 'BERSERKER FERAL', description: 'Limitless Reflexes', icon: Icons.pets, color: AppColors.tertiaryContainer),
@@ -252,6 +255,7 @@ class FusionData {
       originStory: 'Megumi\'s shadow puppets harness the celestial lightning of Odin\'s bloodline.',
       primaryColor: Color(0xFF2DD4BF),
       avatarIcon: Icons.storm,
+      imageUrl: 'assets/images/thunder_shadow.jpg',
       abilities: [
         FusionAbility(name: 'LIGHTNING MAHOREGA', description: 'Storm Adaptation', icon: Icons.thunderstorm, color: Color(0xFF2DD4BF)),
         FusionAbility(name: 'THUNDER NUE', description: 'Aerial Shockwave', icon: Icons.air, color: AppColors.secondary),
@@ -272,6 +276,7 @@ class FusionData {
       originStory: 'Choso\'s Death Painting blood manipulation augmented with Wanda\'s Chaos Magic.',
       primaryColor: Color(0xFFE11D48),
       avatarIcon: Icons.bloodtype,
+      imageUrl: 'assets/images/crimson_chaos.jpg',
       abilities: [
         FusionAbility(name: 'SUPERNOVA HEX', description: 'Explosive Blood Spheres', icon: Icons.bubble_chart, color: Color(0xFFE11D48)),
         FusionAbility(name: 'PIERCING CHAOS BEAM', description: 'Hypersonic Reality Piercer', icon: Icons.flare, color: AppColors.primary),
@@ -292,6 +297,7 @@ class FusionData {
       originStory: 'Todo with Stark Industries Arc Reactor implanted into his clap resonance matrix.',
       primaryColor: Color(0xFFF59E0B),
       avatarIcon: Icons.shield,
+      imageUrl: 'assets/images/boogie_tech.jpg',
       abilities: [
         FusionAbility(name: 'ARC BOOGIE WOOGIE', description: 'Nanite Position Swap', icon: Icons.swap_horiz, color: Color(0xFFF59E0B)),
         FusionAbility(name: 'UNIBEAM BLACK FLASH', description: 'Chest Laser Impact', icon: Icons.highlight, color: AppColors.crimsonSlash),
@@ -312,6 +318,7 @@ class FusionData {
       originStory: 'Nobara wielding cosmic hammers energized by pure Tesseract energy.',
       primaryColor: Color(0xFFA855F7),
       avatarIcon: Icons.push_pin,
+      imageUrl: 'assets/images/binary_resonance.jpg',
       abilities: [
         FusionAbility(name: 'COSMIC HAIRPIN', description: 'Stellar Energy Explosion', icon: Icons.auto_awesome, color: Color(0xFFA855F7)),
         FusionAbility(name: 'BINARY RESONANCE', description: 'Soul & Matter Piercing', icon: Icons.offline_bolt, color: Color(0xFFF59E0B)),
