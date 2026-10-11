@@ -1,0 +1,47 @@
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+*.g.dart
+*.freezed.dart
+
+# API Keys & secrets — NEVER commit these
+lib/config/api_config.dart
+.env
+.env.*
+*.pem
+*.key
+
+# Android
+android/.gradle/
+android/local.properties
+android/captures/
+android/gradlew
+android/gradlew.bat
+android/gradle/wrapper/gradle-wrapper.jar
+*.keystore
+*.jks
+
+# iOS
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/.symlinks/
+ios/Pods/
+ios/Runner.xcworkspace/
+.ios/
+
+# IDE
+.idea/
+.vscode/settings.json
+*.iml
+*.ipr
+*.iws
+.DS_Store
+Thumbs.db
+
+# Misc
+pubspec.lock
+coverage/
+doc/api/
