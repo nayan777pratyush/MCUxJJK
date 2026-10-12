@@ -10,7 +10,7 @@ build/
 # API Keys & secrets — NEVER commit these
 lib/config/api_config.dart
 .env
-.env.*
+!.env.example
 *.pem
 *.key
 
